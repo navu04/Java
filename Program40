@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+class Employee {
+    String name, dept;
+    int age;
+    double salary;
+
+    public Employee(String n, String d, int a, double s) {
+        name = n;
+        dept = d;
+        age = a;
+        salary = s;
+    }
+
+    public void show() {
+        System.out.println("Name : " + name);
+        System.out.println("Department : " + dept);
+        System.out.println("Age : " + age);
+        System.out.println("Salary : " + salary);
+    }
+}
+
+public class main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Employee[] employees = new Employee[5];
+
+        for (int i = 0; i < 5; i++) {
+            System.out.println("Enter the details of the employee " + (i + 1) + ":");
+
+            System.out.print("Name:");
+            String name = scanner.nextLine();
+
+            System.out.print("Department:");
+            String dept = scanner.nextLine();
+
+            System.out.print("Age:");
+            int age = scanner.nextInt();
+
+            System.out.print("Salary:");
+            double salary = scanner.nextDouble();
+
+            scanner.nextLine();
+
+            employees[i] = new Employee(name, dept, age, salary);
+        }
+
+        System.out.println("\nEmplopyee Details : ");
+
+        for (int i = 0; i < 5; i++) {
+            employees[i].show();
+            System.out.println();
+        }
+
+        scanner.close();
+    }
+}
